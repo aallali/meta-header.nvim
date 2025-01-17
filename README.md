@@ -35,7 +35,7 @@ To proceed with using Lua without Lazy.nvim, here's what you need to do:
 #### **1. Clone the Plugin Repository**
 Clone the `meta-header.nvim` repository into your Neovim configuration:
 ```bash
-git clone https://github.com/allali/meta-header.nvim ~/.config/nvim/lua/meta_header
+git clone https://github.com/aallali/meta-header.nvim ~/.config/nvim/lua/meta_header
 ```
 
 #### **2. Load the Plugin**
