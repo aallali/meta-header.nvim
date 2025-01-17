@@ -9,22 +9,19 @@
                 -- Create the template file in the current directory
                 local file = io.open(hdr_meta_path, "w")
                 file:write([[
-    #!/bin/bash
-    
-    # Fill in the following environment variables
-    export HDR_AUTHOR="<Copyright Your Name Here>"
-    export HDR_USERNAME="<Your Username Here>"
-    export HDR_PROJECT="<Your Project Name Here>"
-    export HDR_LICENCE="<Your License Here>"
+#!/bin/bash
 
-    echo "AUTHOR: $HDR_AUTHOR"
-    echo "USERNAME: $HDR_USERNAME"
-    echo "PROJECT: $HDR_PROJECT"
-    echo "LICENCE: $HDR_LICENCE"
+# Fill in the following environment variables
+export HDR_AUTHOR="<Copyright Your Name Here>"
+export HDR_USERNAME="<Your Username Here>"
+export HDR_PROJECT="<Your Project Name Here>"
+export HDR_LICENCE="<Your License Here>"
 
-    # Uncomment the next line after editing:
-    # source ./hdr_meta.sh
-    ]])
+echo "AUTHOR: $HDR_AUTHOR"
+echo "USERNAME: $HDR_USERNAME"
+echo "PROJECT: $HDR_PROJECT"
+echo "LICENCE: $HDR_LICENCE"
+]])
                 file:close()
     
                 -- Notify the user
