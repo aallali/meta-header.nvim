@@ -12,10 +12,10 @@
 #!/bin/bash
 
 # Fill in the following environment variables
-export HDR_AUTHOR="<Copyright Your Name Here>"
+export HDR_AUTHOR="<Copyright © Your Name Here>"
 export HDR_USERNAME="<Your Username Here>"
 export HDR_PROJECT="<Your Project Name Here>"
-export HDR_LICENCE="<Your License Here>"
+export HDR_LICENCE="<Your Licence Here>"
 
 echo "AUTHOR: $HDR_AUTHOR"
 echo "USERNAME: $HDR_USERNAME"
@@ -45,7 +45,7 @@ local function update_header()
                                                                           
   File    : $FILENAME
   Project : $PROJECT
-  licence : $LICENCE
+  Licence : $LICENCE
                                                                           
   Created: $CREATEDAT by $CREATEDBY
   Updated: $UPDATEDAT by $UPDATEDBY
