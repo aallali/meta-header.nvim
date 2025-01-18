@@ -6,9 +6,9 @@
 --   License : MIT                                                            --
 --                                                                            --
 --   Created: 2025/01/17 17:06:14 by aallali                                  --
---   Updated: 2025/01/18 03:45:23 by aallali                                  --
+--   Updated: 2025/01/18 04:45:58 by aallali                                  --
 -- ************************************************************************** --
-local header_utils = require('utils.init')
+local header_utils = require('meta_header.utils.init')
 
 local function update_header()
     local header_width = 76

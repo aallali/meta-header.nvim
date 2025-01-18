@@ -6,10 +6,10 @@
 --   License : MIT                                                            --
 --                                                                            --
 --   Created: 2025/01/18 03:15:51 by aallali                                  --
---   Updated: 2025/01/18 03:39:11 by aallali                                  --
+--   Updated: 2025/01/18 04:45:18 by aallali                                  --
 -- ************************************************************************** --
-local pad_and_replace = require("utils.pad_and_replace")
-local pad_and_wrap_line = require("utils.pad_and_wrap_line")
+local pad_and_replace = require("meta_header.utils.pad_and_replace")
+local pad_and_wrap_line = require("meta_header.utils.pad_and_wrap_line")
 
 local function generate_formatted_header(template, placeholders, header_width, comment_open, comment_close)
     -- Generate base header
