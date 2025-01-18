@@ -6,7 +6,7 @@
 --   License : MIT                                                            --
 --                                                                            --
 --   Created: 2025/01/17 17:06:14 by aallali                                  --
---   Updated: 2025/01/18 04:45:58 by aallali                                  --
+--   Updated: 2025/01/18 12:55:07 by aallali                                  --
 -- ************************************************************************** --
 local header_utils = require('meta_header.utils.init')
 
@@ -65,6 +65,8 @@ local function update_header()
 
     -- Insert or update the header
     header_utils.insert_header(lines, header_lines)
+    
+    header_utils.update_plugin()
 end
 
 -- Export the function for external usage
