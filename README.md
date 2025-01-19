@@ -9,7 +9,7 @@
 /*                                                                            */
 /*   File    : test.c                                                         */
 /*   Project : meta-header.nvim                                               */
-/*   licence : MIT                                                            */
+/*   license : MIT                                                            */
 /*                                                                            */
 /*   Created: 2025/01/17 13:37:00 by aallali                                  */
 /*   Updated: 2025/01/17 17:11:08 by aallali                                  */
@@ -20,7 +20,7 @@
 #                                                                            #
 #   File    : test.py                                                        #
 #   Project : meta-header.nvim                                               #
-#   licence : APACHE                                                         #
+#   license : APACHE                                                         #
 #                                                                            #
 #   Created: 2025/01/17 18:10:59 by username1                                #
 #   Updated: 2025/01/17 18:11:00 by username2                                #
@@ -34,16 +34,11 @@
     ```bash
     git clone https://github.com/aallali/meta-header.nvim ~/.config/nvim/lua/meta_header
     ```
-1. **Keybinding**
-    - this will bind it to F2 and on file save
+1. **load the plugin**
+    - add this lines to your init.lua file
     ```lua
-    vim.api.nvim_set_keymap("n", "<F2>", ":lua require('meta_header').update_header()<CR>", { noremap = true, silent = true })
-    vim.api.nvim_create_autocmd("BufWritePost", {
-        pattern = "*",
-        callback = function()
-            require('meta_header').update_header()
-        end
-    })
+    require('meta_header').update_plugin() -- basically just git pull latest changes
+    require('meta_header').load_mappings() -- bind F2 + OnSave 
     ```
 1. **Restart Neovim**
 
@@ -58,7 +53,7 @@
     export HDR_AUTHOR="Your Name"
     export HDR_USERNAME="Your Username"
     export HDR_PROJECT="Your Project Name"
-    export HDR_LICENCE="Your License"
+    export HDR_LICENSE="Your License"
     ```
 3. Source the `hdr_meta.sh` file:
     ```bash
@@ -72,6 +67,10 @@
 
 ## Changelog
 
+- 2025/01/19 - [db8facc](https://github.com/aallali/meta-header.nvim/commit/db8facc) - **`refact`** - split update from insert to run each in correct situation (update only if header exists, insert on demand) + create load_mappings method + update_plugin to run one time on first load
+
+- 2025/01/19 - [1f51bf2](https://github.com/aallali/meta-header.nvim/commit/1f51bf2) - **`fix`** - handle unicode length correctly for pad calculation e.g: `©` _it has length of 2, while visually it should be only 1_
+- 2025/01/19 - [a370145](https://github.com/aallali/meta-header.nvim/commit/a370145) - **`refact`** - update get_comment_style() to detect file type using extension 
 - 2025/01/18 - [5356ecd](https://github.com/aallali/meta-header.nvim/commit/5356ecd) - **`feature`** - Add mechanism to auto-update plugin code after header generation
 - 2025/01/18 - [868787b](https://github.com/aallali/meta-header.nvim/commit/868787b) - **`fix`** - Update import paths to use full plugin path instead of relative imports
 
