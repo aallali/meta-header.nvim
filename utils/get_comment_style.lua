@@ -6,7 +6,7 @@
 --   License : MIT                                                            --
 --                                                                            --
 --   Created: 2025/01/18 02:23:11 by aallali                                  --
---   Updated: 2025/01/19 14:50:34 by aallali                                  --
+--   Updated: 2025/01/24 21:50:00 by aallali                                  --
 -- ************************************************************************** --
 -- Determine the comment style based on the file type
 local function get_comment_style()
@@ -23,6 +23,8 @@ local function get_comment_style()
         return "/*", "*/"
     elseif extension == "html" or extension == "xml" then
         return "<!--", "-->"
+    elseif extension == "go" then
+        return "//", "//"
     else
         return "*", "*"
     end
