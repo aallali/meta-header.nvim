@@ -1,12 +1,12 @@
 -- ************************************************************************** --
---   Copyright © 2025 <hi@allali.me>                                         --
+--   Copyright © 2025 <hi@allali.me>                                          --
 --                                                                            --
 --   File    : ensure_env_vars.lua                                            --
 --   Project : meta-header.nvim                                               --
 --   License : MIT                                                            --
 --                                                                            --
 --   Created: 2025/01/18 02:19:33 by aallali                                  --
---   Updated: 2025/01/18 02:27:14 by aallali                                  --
+--   Updated: 2025/01/28 14:33:15 by aallali                                  --
 -- ************************************************************************** --
 -- Function to check and set HDR environment variables
 local function ensure_env_vars()
@@ -22,12 +22,14 @@ local function ensure_env_vars()
             file:write([[
 #!/bin/bash
 
+# Plugin: https://github.com/aallali/meta-header.nvim/
 # Fill in the following environment variables
 export HDR_AUTHOR="<Copyright © Your Name Here>"
 export HDR_USERNAME="<Your Username Here>"
 export HDR_PROJECT="<Your Project Name Here>"
 export HDR_LICENSE="<Your License Here>"
 
+# source this file after modify (source hdr_meta.sh)
 echo "AUTHOR: $HDR_AUTHOR"
 echo "USERNAME: $HDR_USERNAME"
 echo "PROJECT: $HDR_PROJECT"
