@@ -29,7 +29,20 @@
 ```
 
 ## Installation
-
+### Method 1:
+add this to your `LAZY` plugin loader
+```lua
+require("lazy").setup({
+  {
+    "aallali/meta-header.nvim",
+    config = function()
+      require("meta_header").load_mappings()
+      require("meta_header").update_plugin()
+    end,
+  },
+})
+```
+### Method 2:
 1. **Clone the Plugin Repository**
     ```bash
     git clone https://github.com/aallali/meta-header.nvim ~/.config/nvim/lua/meta_header
