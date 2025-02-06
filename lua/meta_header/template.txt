@@ -1,0 +1,10 @@
+**************************************************************************
+   $AUTHOR
+
+   File    : $FILENAME
+   Project : $PROJECT
+   License : $LICENSE
+
+   Created: $CREATEDAT by $CREATEDBY
+   Updated: $UPDATEDAT by $UPDATEDBY
+**************************************************************************
