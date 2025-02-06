@@ -25,6 +25,10 @@ local function hdr_generator()
     local generic_template = template_file:read("*all")
     template_file:close()
 
+    local height = 1
+    for _ in generic_template:gmatch("\n") do
+        height = height + 1
+    end
 
     local comment_open, comment_close = header_utils.get_comment_style()
 
@@ -49,7 +53,8 @@ local function hdr_generator()
     }
 
     -- Fetch existing header (if any)
-    local lines = vim.api.nvim_buf_get_lines(0, 0, 10, false)
+    local lines = vim.api.nvim_buf_get_lines(0, 0, height, false)
+    
     -- Get existing metadata and updated lines
     local tmpLines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
     local existing_created_at, existing_created_by, lines = header_utils.extract_existing_metadata(tmpLines)
