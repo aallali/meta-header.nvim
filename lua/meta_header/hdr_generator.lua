@@ -14,7 +14,7 @@ local function hdr_generator()
     header_utils.ensure_env_vars()
 
     -- Load template from file
-    local template_path = debug.getinfo(1, "S").source:sub(2):match("(.*/)").. "template.txt"
+    local template_path = debug.getinfo(1, "S").source:sub(2):match("(.*/)").. "templates/template.txt"
     local template_file = io.open(template_path, "r")
     if not template_file then
         vim.notify("Could not load template file", vim.log.levels.ERROR)
