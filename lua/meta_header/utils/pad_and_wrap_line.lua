@@ -13,7 +13,7 @@ local function pad_and_wrap_line(line, width, prefix, suffix)
     local display_width = vim.fn.strdisplaywidth(line)
     
     -- Calculate padding needed
-    local padding_needed = width - display_width
+    local padding_needed = width - display_width + 1
     
     -- Ensure non-negative padding
     if padding_needed < 0 then padding_needed = 0 end
