@@ -11,8 +11,6 @@
 local header_utils = require('meta_header.utils.init')
 
 local function hdr_generator()
-    local header_width = 76
-
     header_utils.ensure_env_vars()
 
     -- Load template from file
@@ -24,6 +22,9 @@ local function hdr_generator()
     end
     local generic_template = template_file:read("*all")
     template_file:close()
+
+    -- Calculate header_width from first line of template
+    local header_width = #(generic_template:match("[^\n]*")) + 1
 
     local height = 1
     for _ in generic_template:gmatch("\n") do
