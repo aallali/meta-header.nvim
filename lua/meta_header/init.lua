@@ -13,12 +13,13 @@ local hdr_generator = require('meta_header.hdr_generator')
 
 local function has_header()
     local lines = vim.api.nvim_buf_get_lines(0, 0, 10, false)
-    return #lines >= 10 and lines[1]:match("%*+")
+
+    return #lines >= 10 and #lines >= 10 and (lines[1]:match("%*+") or lines[1]:match("%-+") or lines[1]:match("%=+"))
 end
 
 local function update_meta_header(lines, header_lines)
     lines, header_lines = hdr_generator()
-    if #lines >= 10 and lines[1]:match("%*+") then
+    if has_header() then
         -- Update the first lines with the new header content
         vim.api.nvim_buf_set_lines(0, 0, #header_lines, false, header_lines)
     end
