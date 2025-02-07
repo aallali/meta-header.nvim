@@ -6,19 +6,18 @@
 --   License : MIT                                                            --
 --                                                                            --
 --   Created: 2025/01/19 14:32:53 by aallali                                  --
---   Updated: 2025/02/06 21:54:22 by aallali                                  --
+--   Updated: 2025/02/07 16:00:30 by aallali                                  --
 -- ************************************************************************** --
 local header_utils = require('meta_header.utils.init')
 
 local function hdr_generator()
     header_utils.ensure_env_vars()
-
     -- Load template from file
-    local template_path = debug.getinfo(1, "S").source:sub(2):match("(.*/)").. "templates/template.txt"
-    local template_file = io.open(template_path, "r")
+    local template_path = header_utils.get_template_path()
+    local template_file = io.open(template_path, 'r')
     if not template_file then
-        vim.notify("Could not load template file", vim.log.levels.ERROR)
-        return
+      vim.notify('Template file not found: ' .. template_path, vim.log.levels.ERROR)
+      return
     end
     local generic_template = template_file:read("*all")
     template_file:close()
