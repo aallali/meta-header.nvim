@@ -23,9 +23,9 @@ function M.setup(opts)
 end
 
 local function has_header()
-    local lines = vim.api.nvim_buf_get_lines(0, 0, 10, false)
+    local lines = vim.api.nvim_buf_get_lines(0, 0, 14, false)
 
-    if #lines < 10 then
+    if #lines < 8 then
         return false
     end
 
