@@ -1,10 +1,10 @@
 ************************************************************
-   $AUTHOR________________________________        ┏┓ ┏┓ ┏┓ 
-                                                  ┃┫ ┏┛ ┃┫ 
-   File    : $FILENAME____________________        ┗┛•┗━•┗┛ 
+   $AUTHOR________________________________
+                                          
+   File    : $FILENAME____________________
    Project : $PROJECT_____________________
    License : $LICENSE_____________________
 
-   Created: $CREATEDAT_________ by $CREATEDBY__
-   Updated: $UPDATEDAT_________ by $UPDATEDBY__
+   Created : $CREATEDAT_________ by $CREATEDBY__
+   Updated : $UPDATEDAT_________ by $UPDATEDBY__
 ************************************************************

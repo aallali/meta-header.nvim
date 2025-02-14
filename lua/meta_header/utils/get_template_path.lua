@@ -5,8 +5,8 @@
 --    Project : meta_header.nvim                                --
 --    License : MIT                                             --
 --                                                              --
---    Created: 2025/02/07 13:35:05 by aallali                   --
---    Updated: 2025/02/14 18:44:20 by aallali                   --
+--    Created : 2025/02/07 13:35:05 by aallali                  --
+--    Updated : 2025/02/14 18:48:39 by aallali                  --
 -- ************************************************************ --
 local function get_template_path()
 	local config = require("meta_header").config
