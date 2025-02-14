@@ -114,8 +114,13 @@ return {
 
 ## Changelog
 
+- **0.2.1** (_14/02/2025_)
+  - `ae18f20` **`style`**: format all files
+  - `9971fdf` **`fix`**: remove unused arg in update_meta_header
+  - `f8dd944` **`fix`**: generate template when not found
+  - `16d65c7` **`fix`**: handle created at dates on different templates
 - **0.2.0** (_8/02/2025_)
-  - `head` **`docs`**: Update guide for `0.2.0` release
+  - `6039c36` **`docs`**: Update guide for `0.2.0` release
   - `a5ce68b` **`feat`**: upload generated `.meta_header`
   - `df59e07` **`feat`**: create `.meta_header` folder in root folder for configs
   - `3ff97f6` **`refact`**: check for small headers `has_header`
