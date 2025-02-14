@@ -1,35 +1,58 @@
--- **************************************************** --
---    Copyright © 2025 <hi@allali.me>                   --
---                                                      --
---    File    : get_template_path.lua                   --
---    Project : meta-header.nvim                        --
---    License : MIT                                     --
---                                                      --
---    Created: 2025/02/07 13:35:05 by aallali           --
---    Updated: 2025/02/07 17:35:57 by aallali           --
--- **************************************************** --
+-- ************************************************************ --
+--    Copyright © 2025 <hi@allali.me>                           --
+--                                                              --
+--    File    : get_template_path.lua                           --
+--    Project : meta_header.nvim                                --
+--    License : MIT                                             --
+--                                                              --
+--    Created: 2025/02/07 13:35:05 by aallali                   --
+--    Updated: 2025/02/14 18:44:20 by aallali                   --
+-- ************************************************************ --
 local function get_template_path()
-    local config = require("meta_header").config
-    if config.template_locally then
-        local local_template = vim.fn.getcwd() .. "/.meta_header/template.txt"
-        if vim.fn.filereadable(local_template) == 1 then
-            return local_template
-        else 
-            print("Template file not found: " .. local_template)
-        end
-    end
+	local config = require("meta_header").config
+	if config.template_locally then
+		local local_template = vim.fn.getcwd() .. "/.meta_header/template.txt"
 
-    -- Plugin templates directory
-    local plugin_template_dir = vim.fn.stdpath("config") .. "/lua/meta_header/lua/meta_header/templates/"
-    local template_path = plugin_template_dir .. config.template
+		-- Create directory if it doesn't exist
+		local dir = vim.fn.getcwd() .. "/.meta_header"
+		if vim.fn.isdirectory(dir) == 0 then
+			vim.fn.mkdir(dir, "p")
+		end
 
-    if vim.fn.filereadable(template_path) == 1 then
-        return template_path
-    end
+		-- Create template file if it doesn't exist
+		if vim.fn.filereadable(local_template) == 0 then
+			-- Create with default content
+			local default_content = [[****************************************************
+   $AUTHOR________________________________________
 
-    -- Fallback to default
-    return plugin_template_dir .. "template.txt"
+   File    : $FILENAME____________________________
+   Project : $PROJECT_____________________________
+   License : $LICENSE_____________________________
+
+   Created: $CREATEDAT_________ by $CREATEDBY___
+   Updated: $UPDATEDAT_________ by $UPDATEDBY___
+****************************************************]]
+			local file = io.open(local_template, "w")
+			if file then
+				file:write(default_content)
+				file:close()
+				print("Created template file at: " .. local_template)
+			end
+		end
+
+		return local_template
+	end
+
+	-- Plugin templates directory
+	local plugin_template_dir = vim.fn.stdpath("config") .. "/lua/meta_header/lua/meta_header/templates/"
+	local template_path = plugin_template_dir .. config.template
+
+	if vim.fn.filereadable(template_path) == 1 then
+		return template_path
+	end
+
+	-- Fallback to default
+	return plugin_template_dir .. "template.txt"
 end
 
 return get_template_path
-
